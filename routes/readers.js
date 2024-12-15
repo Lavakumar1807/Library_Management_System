@@ -15,7 +15,7 @@ router.post("/profile" , async (req,res)=>{
             return;
         }
         if(!readerUserProfile){
-           res.status(404).json({ message : "No user found . If you don't have an account please make an user account ."});
+           res.status(404).json({ message : "No user found . If you don't have an account please make an user account or check email "});
            return;
         }
         

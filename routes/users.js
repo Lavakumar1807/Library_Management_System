@@ -8,6 +8,7 @@ const authenticateToken = require("../middlewares/authenticateToken");
 // This is the secret key for jwt token , should be kept in env file but for time being let it be global .
 const secretKey = "jkdgbldofehkwheldkfjl";
 
+// Check for token validation
 router.get('/session/validate',authenticateToken,(req,res)=>{
     const currentTime = Math.floor(Date.now()/1000);
     if(req.user.exp < currentTime){
@@ -23,6 +24,7 @@ router.get('/session/validate',authenticateToken,(req,res)=>{
     }
 })
 
+// Create an user account
 router.post("/signup",async (req,res)=>{
     const  { username,email,password,bookswritten,persontype,borrowedbooks} = req.body;
 
@@ -77,7 +79,7 @@ router.post('/login',async (req,res)=>{
      }
 })
 
-
+// Update user information
 router.put('/update/:id', async (req,res)=>{
     const userData = req.body;
     const id = req.params.id;
@@ -86,15 +88,15 @@ router.put('/update/:id', async (req,res)=>{
           userData.password = await hashPassword(userData.password);
        }
 
-       await Users.findByIdAndUpdate(id,userData);
-       res.send(200,"User data updated successfully");
+       const newuserData = await Users.findByIdAndUpdate(id,userData);
+       res.status(200).json({ message  : "User data updated successfully " , userData  : newuserData })
     }catch(error){
        // console.log("Error in updating user data : ",error);
        res.status(500).json({ message : "Fail to update user data" , ERROR : error});
     }
 })
 
-
+// Delete user account
 router.delete("/delete/:id" , async (req,res)=>{
     const id = req.params.id;
 

@@ -38,7 +38,7 @@ router.post('/create',authenticateToken,checkPersonType ,async (req,res)=>{
          bookswritten : author.bookswritten
       });
 
-      res.send(201,"New book created");
+      res.status(200).json({ message : "new book created" , book : newBook})
     }catch(error){
       // console.log("Error in creating new book : ",error);
       res.status(500).json({ message : "Fail", ERROR : error});
@@ -93,6 +93,7 @@ router.put("/update/:id" , authenticateToken , checkPersonType , async (req,res)
     }
 })
 
+// delete the book
 router.delete('/delete/:id',authenticateToken , checkPersonType ,async (req,res)=>{
     const bookId = req.params.id;
     if(!bookId){
