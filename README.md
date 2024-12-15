@@ -1,7 +1,7 @@
 ﻿# Library_Management_System
 
 ## Approach
-<p>In building the Library Management System , I have used Express.js for the backend framework and MongoDB as a database. For authentication , I have used JWT tokens for a secure system . Routing and API endpoints are handled by express and organized the code into different sections for better readability and  implemented middlewares to handle common tasks like token verification and  checking roles for furthur usage and security puposes . Hashed password for better security .</p>
+<p>In building the Library Management System , I have used Express.js for the backend framework and MongoDB as a database. For authentication , I have used JWT tokens for authentication . Routing and API endpoints are handled by express and organized the code into different sections for better readability and  implemented middlewares to handle common tasks like token verification and  checking roles for furthur usage and security puposes . Hashed password for better security .</p>
 
 ## Instructions 
 <p>First clone the repository
