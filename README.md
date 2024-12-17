@@ -1,7 +1,25 @@
 ﻿# Library_Management_System
+ 
+<h2>Overview</h2>
 
-## Approach
-<p>In building the Library Management System , I have used Express.js for the backend framework and MongoDB as a database. For authentication , I have used JWT tokens for authentication . Routing and API endpoints are handled by express and organized the code into different sections for better readability and  implemented middlewares to handle common tasks like token verification and  checking roles for furthur usage and security puposes . Hashed password for better security .</p>
+<p>The Library Management System (LMS) is designed to efficiently manage library operations, such as book management, user registration, authentication, and transaction tracking. </p>
+
+<h2>Backend Framework (Express.js)</h2>
+
+<p>The backend of the system is built using Express.js, a robust web framework for Node.js. Express facilitates the creation of RESTful API endpoints to handle user requests such as retrieving books, adding new books, and managing user data. </p>
+
+<h2>Database (MongoDB) </h2>
+
+<p>The system uses MongoDB, a NoSQL database, to store and manage data. MongoDB’s flexible documented structure allows for easy storage and retrieval of data </p>
+
+<h2>Authentication </h2>
+
+<p>To ensure secure access to the system, JWT (JSON Web Tokens) are used for user authentication. JWT tokens are issued after a user successfully logs in, and the token is sent with each subsequent request through headers to validate the user's identity. </p>
+
+<h2>Password Security </h2>
+
+<p>To protect user data, particularly passwords, the system employs password hashing using  bcrypt module. This ensures , sensitive information like user passwords remains secure. The password is hashed before being stored, and during login, the hashed password is compared to the entered password for authentication.</p>
+
 
 ## Instructions 
 <p>First clone the repository
